@@ -1,5 +1,4 @@
 ---
-import { Debug } from "astro:components";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import Books from "../components/Book/Books.jsx";
@@ -11,18 +10,4 @@ const pageTitle = "Bookshelf";
 <BaseLayout pageTitle={pageTitle}>
   <h2>A bookshelf, ya!</h2>
   <Books client:load books={allBooks} />
-
-  <Debug data={allBooks} />
 </BaseLayout>
-
-<!-- 
-  Use BaseLayout for consistent page styling...
-
-  Load items from airtable using SSSR.
-
-  Display items in a grid, with title, author, and cover image.
-
-  // send as little JavaScript as possible to the client.
-  // Use Preact?
-  // how to leverage SSR and Astro Islands?
--->
